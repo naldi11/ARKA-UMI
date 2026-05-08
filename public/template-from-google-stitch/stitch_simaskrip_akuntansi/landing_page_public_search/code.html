@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#d6d3d8",
+                        "on-tertiary-fixed-variant": "#5f5773",
+                        "on-surface": "#2b3437",
+                        "on-primary-fixed": "#1d3989",
+                        "tertiary-dim": "#564f6a",
+                        "primary-dim": "#334d9d",
+                        "secondary": "#5f5f62",
+                        "surface-tint": "#4059aa",
+                        "on-tertiary-container": "#554e69",
+                        "error": "#9e3f4e",
+                        "primary-container": "#dce1ff",
+                        "surface-container": "#eaeff1",
+                        "on-primary-fixed-variant": "#3d57a7",
+                        "outline-variant": "#abb3b7",
+                        "on-primary-container": "#334c9d",
+                        "primary-fixed-dim": "#c9d3ff",
+                        "secondary-container": "#e4e1e6",
+                        "primary": "#4059aa",
+                        "error-container": "#ff8b9a",
+                        "on-primary": "#f8f7ff",
+                        "on-secondary-fixed-variant": "#5b5b5f",
+                        "surface-container-high": "#e3e9ec",
+                        "inverse-on-surface": "#9b9d9e",
+                        "outline": "#737c7f",
+                        "on-secondary-fixed": "#3f3f43",
+                        "secondary-dim": "#535356",
+                        "secondary-fixed": "#e4e1e6",
+                        "error-dim": "#4f0116",
+                        "background": "#f8f9fa",
+                        "on-error-container": "#782232",
+                        "on-secondary": "#fbf8fc",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#8fa7fe",
+                        "on-tertiary-fixed": "#423b56",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-tertiary": "#fdf7ff",
+                        "surface-dim": "#d1dce0",
+                        "tertiary": "#625b77",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed-dim": "#dacff0",
+                        "on-error": "#fff7f7",
+                        "primary-fixed": "#dce1ff",
+                        "surface-variant": "#dbe4e7",
+                        "inverse-surface": "#0c0f10",
+                        "on-background": "#2b3437",
+                        "on-surface-variant": "#586064",
+                        "tertiary-fixed": "#e8ddff",
+                        "on-secondary-container": "#525155",
+                        "tertiary-container": "#e8ddff",
+                        "surface-container-low": "#f1f4f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-header {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 z-50 w-full bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-300" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="text-xl font-bold text-blue-900 dark:text-blue-100 font-sans tracking-tight">Scholaris Core</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-blue-700 dark:text-blue-400 font-semibold text-sm transition-colors hover:bg-blue-50 dark:hover:bg-blue-900/30 px-3 py-1.5 rounded-full" href="#">Search</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm transition-colors hover:bg-blue-50 dark:hover:bg-blue-900/30 px-3 py-1.5 rounded-full" href="#">Guidelines</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm transition-colors hover:bg-blue-50 dark:hover:bg-blue-900/30 px-3 py-1.5 rounded-full" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:text-primary transition-colors">notifications</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs border border-primary/10">
+                    JD
+                </div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 min-h-screen">
+<section class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center">
+<h1 class="text-5xl font-extrabold tracking-tight text-on-surface mb-6 leading-tight">
+                Academic Research <span class="text-primary italic">Simplified.</span>
+</h1>
+<p class="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">
+                Access the archive of Accounting theses from the last 3 years. Search by student name or faculty supervisor.
+            </p>
+<div class="relative max-w-2xl mx-auto group">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="block w-full pl-14 pr-24 py-5 bg-surface-container-lowest rounded-full shadow-lg shadow-primary/5 border-none focus:ring-2 focus:ring-primary/20 text-lg placeholder:text-outline transition-all group-hover:shadow-xl" placeholder="Search by student, lecturer, or thesis title..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-primary-dim transition-colors shadow-md">
+                    Search
+                </button>
+</div>
+<div class="mt-6 flex items-center justify-center gap-3">
+<span class="text-xs font-medium text-outline uppercase tracking-widest">Trending Tags:</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant text-xs hover:bg-primary-container hover:text-on-primary-container cursor-pointer transition-colors">Forensic Audit</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant text-xs hover:bg-primary-container hover:text-on-primary-container cursor-pointer transition-colors">ESG Reporting</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant text-xs hover:bg-primary-container hover:text-on-primary-container cursor-pointer transition-colors">Tax Policy</span>
+</div>
+</section>
+<section class="max-w-6xl mx-auto px-6 py-12">
+<div class="flex items-center justify-between mb-8 border-b border-surface-container-highest pb-4">
+<h2 class="text-xl font-bold text-on-surface">Recent Submissions (2021-2024)</h2>
+<div class="flex gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-surface-container-low text-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                    </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-surface-container-low text-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">swap_vert</span> Sort
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary-fixed text-on-primary-fixed">Thesis Proposal</span>
+<span class="text-xs text-on-surface-variant font-medium">May 2024</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug mb-3">Impact of AI Integration on Auditing Efficiency in Mid-Sized Firms</h3>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>Sarah J. Mitchell</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">supervisor_account</span>
+<span>Dr. Robert Chen</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold uppercase text-primary">Approved</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant">Final Defense</span>
+<span class="text-xs text-on-surface-variant font-medium">Mar 2024</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug mb-3">Comparative Analysis of ESG Reporting Standards: IFRS vs. GRI</h3>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>Marcus Aurelius Vance</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">supervisor_account</span>
+<span>Prof. Elena Rodriguez</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold uppercase text-primary">Completed</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+</div>
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary-fixed text-on-primary-fixed">Active Study</span>
+<span class="text-xs text-on-surface-variant font-medium">Jan 2024</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug mb-3">Cryptocurrency Tax Evasion: Regulatory Challenges in Emerging Markets</h3>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>Lina K. Holloway</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">supervisor_account</span>
+<span>Dr. Simon Peter</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container-low">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">pending</span>
+<span class="text-[10px] font-bold uppercase">In Progress</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="mt-12 p-8 rounded-2xl bg-primary text-on-primary flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
+<div class="z-10 relative">
+<h4 class="text-2xl font-bold mb-2">Can't find a specific researcher?</h4>
+<p class="text-primary-fixed-dim max-w-md">Our full database is available for registered faculty and students. Log in to access the comprehensive digital archive.</p>
+</div>
+<div class="flex gap-4 z-10 relative">
+<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-xl font-bold hover:bg-on-primary-fixed-variant hover:text-on-primary transition-all">
+                        Request Access
+                    </button>
+<button class="bg-primary-dim border border-primary-fixed/20 text-on-primary px-6 py-3 rounded-xl font-bold hover:bg-primary-container hover:text-on-primary-container transition-all">
+                        Contact Library
+                    </button>
+</div>
+<div class="absolute right-0 top-0 w-64 h-64 bg-primary-dim opacity-50 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</div>
+</section>
+</main>
+<footer class="w-full py-8 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col items-center justify-center space-y-4 max-w-7xl mx-auto px-6">
+<div class="flex space-x-8">
+<a class="text-xs font-normal Inter uppercase tracking-widest text-slate-400 dark:text-slate-600 hover:text-blue-900 dark:hover:text-blue-200 transition-colors opacity-80 hover:opacity-100" href="#">Support</a>
+<a class="text-xs font-normal Inter uppercase tracking-widest text-slate-400 dark:text-slate-600 hover:text-blue-900 dark:hover:text-blue-200 transition-colors opacity-80 hover:opacity-100" href="#">Guidelines</a>
+<a class="text-xs font-normal Inter uppercase tracking-widest text-slate-400 dark:text-slate-600 hover:text-blue-900 dark:hover:text-blue-200 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+<p class="text-slate-400 dark:text-slate-600 text-xs font-normal Inter uppercase tracking-widest text-center">
+                © 2024 Scholaris Core. All Rights Reserved. Academic Excellence through Digital Governance.
+            </p>
+</div>
+</footer>
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm px-6">
+<div class="bg-surface-container-lowest max-w-sm w-full rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1.5 bg-primary"></div>
+<div class="text-center">
+<div class="h-16 w-16 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">lock</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-3">Restricted Access</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                    Login to view detailed thesis content, methodology, and full PDF documents.
+                </p>
+<div class="flex flex-col gap-3">
+<a class="w-full bg-primary text-on-primary py-3.5 rounded-xl font-bold text-center hover:bg-primary-dim transition-all shadow-lg shadow-primary/20" href="#">
+                        Login to Archive
+                    </a>
+<button class="w-full bg-surface-container-low text-on-surface py-3.5 rounded-xl font-bold text-center hover:bg-surface-container-high transition-all">
+                        Go Back
+                    </button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-[10px] text-outline uppercase tracking-tighter">Authorized Institutional Access Only</p>
+</div>
+</div>
+</div>
+</body></html>

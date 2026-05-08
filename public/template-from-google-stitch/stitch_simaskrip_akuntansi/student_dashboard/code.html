@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Dashboard | Scholaris Core</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#d6d3d8",
+                    "on-tertiary-fixed-variant": "#5f5773",
+                    "on-surface": "#2b3437",
+                    "on-primary-fixed": "#1d3989",
+                    "tertiary-dim": "#564f6a",
+                    "primary-dim": "#334d9d",
+                    "secondary": "#5f5f62",
+                    "surface-tint": "#4059aa",
+                    "on-tertiary-container": "#554e69",
+                    "error": "#9e3f4e",
+                    "primary-container": "#dce1ff",
+                    "surface-container": "#eaeff1",
+                    "on-primary-fixed-variant": "#3d57a7",
+                    "outline-variant": "#abb3b7",
+                    "on-primary-container": "#334c9d",
+                    "primary-fixed-dim": "#c9d3ff",
+                    "secondary-container": "#e4e1e6",
+                    "primary": "#4059aa",
+                    "error-container": "#ff8b9a",
+                    "on-primary": "#f8f7ff",
+                    "on-secondary-fixed-variant": "#5b5b5f",
+                    "surface-container-high": "#e3e9ec",
+                    "inverse-on-surface": "#9b9d9e",
+                    "outline": "#737c7f",
+                    "on-secondary-fixed": "#3f3f43",
+                    "secondary-dim": "#535356",
+                    "secondary-fixed": "#e4e1e6",
+                    "error-dim": "#4f0116",
+                    "background": "#f8f9fa",
+                    "on-error-container": "#782232",
+                    "on-secondary": "#fbf8fc",
+                    "surface": "#f8f9fa",
+                    "inverse-primary": "#8fa7fe",
+                    "on-tertiary-fixed": "#423b56",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-tertiary": "#fdf7ff",
+                    "surface-dim": "#d1dce0",
+                    "tertiary": "#625b77",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary-fixed-dim": "#dacff0",
+                    "on-error": "#fff7f7",
+                    "primary-fixed": "#dce1ff",
+                    "surface-variant": "#dbe4e7",
+                    "inverse-surface": "#0c0f10",
+                    "on-background": "#2b3437",
+                    "on-surface-variant": "#586064",
+                    "tertiary-fixed": "#e8ddff",
+                    "on-secondary-container": "#525155",
+                    "tertiary-container": "#e8ddff",
+                    "surface-container-low": "#f1f4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 py-6 z-40">
+<div class="px-6 mb-10">
+<h1 class="text-lg font-black text-blue-900 dark:text-blue-100 tracking-tight">Scholaris Core</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Academic Management</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center px-4 py-3 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-r-4 border-blue-700 dark:border-blue-400 text-sm font-medium Inter hover:translate-x-1 transition-transform ease-in-out duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium Inter hover:translate-x-1 transition-transform ease-in-out duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="description">description</span>
+                Thesis Proposal
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium Inter hover:translate-x-1 transition-transform ease-in-out duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+                Supervision
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium Inter hover:translate-x-1 transition-transform ease-in-out duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="upload_file">upload_file</span>
+                Documents
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium Inter hover:translate-x-1 transition-transform ease-in-out duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="school">school</span>
+                Defense
+            </a>
+<a class="flex items-center px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium Inter hover:translate-x-1 transition-transform ease-in-out duration-200 mt-auto" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+</aside>
+<div class="md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-6 py-3">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined text-on-surface">menu</span>
+<div class="text-xl font-bold text-blue-900 dark:text-blue-100 font-sans tracking-tight">Scholaris Core</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none text-xs focus:ring-0 w-48 text-on-surface" placeholder="Search thesis resources..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative text-slate-500 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors p-2 rounded-full scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional portrait of a university student with a friendly expression in a modern bright setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5k7EhkxNZukwxCfEViK3S8Gjf27E18R0upMZ1-yCmg2RM_DtalJRGvQ-lToGwiNBOmU4kxw0FnJY0_D8RiULdVi8zm5JN42e4sIOLt61-NPyBYmgpV28qGbmnL1fY7rIAj-XF_9ZL47-T3iV1XM_4FbiZp81KtMrZHnxzYct1bSz2GUf50TxjODtZIi8rflviDv4y5mGTiS-qqoSwcK6GhjiyFX-nxepfTYsmBUD_4PLhpI_tBgCQT3dbel3Fkc6iEq7T0NahpkQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-6 md:p-10 space-y-8 max-w-7xl">
+<!-- Welcome Header -->
+<section class="space-y-1">
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Thesis Overview</h2>
+<p class="text-on-surface-variant text-sm font-medium">Student ID: 2024-ACC-9821 • Department of Professional Accounting</p>
+</section>
+<!-- Horizontal Stepper (The Spine) -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/10">
+<div class="flex items-center justify-between mb-10">
+<div>
+<h3 class="text-lg font-bold text-primary">Progress Pipeline</h3>
+<p class="text-xs text-on-surface-variant">Step 3 of 5: Awaiting Faculty Review</p>
+</div>
+<div class="px-3 py-1 bg-yellow-100 text-yellow-800 text-[10px] font-bold rounded-full uppercase tracking-tighter">Action Required</div>
+</div>
+<div class="relative w-full overflow-x-auto pb-4">
+<div class="flex min-w-[800px] justify-between relative">
+<!-- Progress Track Background -->
+<div class="absolute top-5 left-0 w-full h-[2px] bg-surface-container-high -z-0"></div>
+<!-- Steps -->
+<!-- Step 1: Success -->
+<div class="flex flex-col items-center gap-3 relative z-10 w-1/5">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center ring-4 ring-primary-container">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+<span class="text-[11px] font-bold text-primary text-center px-2">Submit Title</span>
+</div>
+<!-- Step 2: Success -->
+<div class="flex flex-col items-center gap-3 relative z-10 w-1/5">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center ring-4 ring-primary-container">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+<span class="text-[11px] font-bold text-primary text-center px-2">Review Dospem 1</span>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex flex-col items-center gap-3 relative z-10 w-1/5">
+<div class="w-10 h-10 rounded-full bg-[#FFC107] text-white flex items-center justify-center ring-4 ring-yellow-100 animate-pulse">
+<span class="material-symbols-outlined text-lg" data-icon="pending">pending</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface text-center px-2">Review Dospem 2</span>
+</div>
+<!-- Step 4: Grey -->
+<div class="flex flex-col items-center gap-3 relative z-10 w-1/5">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center border-2 border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="upload_file">upload_file</span>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant text-center px-2">Upload Documents</span>
+</div>
+<!-- Step 5: Grey -->
+<div class="flex flex-col items-center gap-3 relative z-10 w-1/5">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center border-2 border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant text-center px-2">Admin Verification</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Layout for Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Feedback/Notes Card -->
+<div class="lg:col-span-2 space-y-6">
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="maps_ugc">maps_ugc</span>
+<h3 class="text-lg font-bold text-on-surface">Lecturer/Admin Notes</h3>
+</div>
+<div class="space-y-4">
+<div class="p-5 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary-dim uppercase tracking-wider">Prof. Adrian Thorne</span>
+<span class="text-[10px] text-on-surface-variant">2 hours ago</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed italic">"The research methodology for the forensic accounting section needs more granular detail regarding the data sampling period. Please refer to the updated guidelines in the Documents tab."</p>
+</div>
+<div class="p-5 bg-surface-container rounded-lg opacity-80">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Academic Admin</span>
+<span class="text-[10px] text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed">Proposal Title Approved: 'Impact of AI Integration on Auditing Standards in Multi-National Entities'. Proceed to Phase 2 Review.</p>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-primary text-on-primary rounded-lg font-bold text-sm shadow-md hover:translate-y-[-2px] transition-all duration-200">
+                            Reply to Notes
+                        </button>
+</section>
+<!-- Document Quick Access -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex items-center gap-4 group cursor-pointer hover:bg-primary-container transition-colors">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Thesis_Proposal_V2.pdf</h4>
+<p class="text-xs text-on-surface-variant">Last edited 2 days ago</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex items-center gap-4 group cursor-pointer hover:bg-primary-container transition-colors">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="table_chart">table_chart</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-on-surface">Data_Analysis_Sheet.xlsx</h4>
+<p class="text-xs text-on-surface-variant">Uploaded Oct 12</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Thesis Context Side Panel -->
+<div class="lg:col-span-1 space-y-6">
+<section class="bg-primary-container/30 rounded-xl p-6 border border-primary/10">
+<h3 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Assigned Supervisors</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Dospem 1" class="w-full h-full object-cover" data-alt="portrait of a senior male professor with grey hair and glasses in a library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTZPhJLx46WJnHz5jVnq252NM9NPtSHoqGNzAl8Het_yTGZkasDH5zr3jsG3o3iriz8zB69pjW-HKrXN3tRv9FZhZqfKgSlczzfPyImhZpPOiP8155lGDv2bFV-bp6kdzKw6c9sPNv-4vTj7c6h0b4beGW7gIgUCk2qFEMLAkshUXEyu12oxeG_poS6KDTAWigkakb0LHQvTk-lFxuyoR9sayQ919z-HDDXheWTuSK1SSxpts14ldrrJQArYYnFPCiJl0U-SfBuXM"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Prof. Adrian Thorne</h4>
+<p class="text-[11px] text-on-surface-variant">Primary Supervisor</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Dospem 2" class="w-full h-full object-cover" data-alt="portrait of a professional female academic in her 40s in a bright office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB--ki0zfmGhqn3pVAY-p7h2ybcInEqgKNENEgSepLpjp3ab6Kd9Q8-852-0WgmFbwToA_46RgbBYVxgSl744vUgBrsdJInCG6YchREeAADbq9br2cu5UmQBJrN1EbSVBbCgrXFZq_esBcq-samslMLGeznqAZdYQScwr6dSlGBLNcdRGxEG2VMTy9Qk_avZBZ-ARJ_jjXGhZ6QPXuI-wqorbJwJ065UXyR2PJ9gc78cC3t7-0zBD30VmBoiMyGq0epiJKx_PHM7UI"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Dr. Elena Rodriguez</h4>
+<p class="text-[11px] text-on-surface-variant">Secondary Supervisor</p>
+</div>
+</div>
+</div>
+<hr class="my-4 border-primary/20"/>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface-variant">Submission Deadline</span>
+<span class="font-bold text-error">Dec 15, 2024</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-on-surface-variant">Revision Cap</span>
+<span class="font-bold text-on-surface">3 Attempts</span>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10">
+<h3 class="text-sm font-black text-on-surface uppercase tracking-widest mb-4">Timeline Activity</h3>
+<div class="space-y-4 border-l-2 border-surface-container-high ml-2 pl-4">
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-primary"></div>
+<p class="text-xs font-bold text-on-surface">Title Approved</p>
+<p class="text-[10px] text-on-surface-variant">Oct 05, 09:12 AM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-primary"></div>
+<p class="text-xs font-bold text-on-surface">Review 1 Completed</p>
+<p class="text-[10px] text-on-surface-variant">Oct 10, 02:45 PM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2 h-2 rounded-full bg-[#FFC107]"></div>
+<p class="text-xs font-bold text-on-surface">Pending Review 2</p>
+<p class="text-[10px] text-on-surface-variant">Estimated: 3-5 days</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-8 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center space-y-4">
+<div class="flex space-x-6">
+<a class="text-slate-400 dark:text-slate-600 text-xs font-normal Inter uppercase tracking-widest hover:text-blue-900 dark:hover:text-blue-200 transition-colors opacity-80 hover:opacity-100" href="#">Support</a>
+<a class="text-slate-400 dark:text-slate-600 text-xs font-normal Inter uppercase tracking-widest hover:text-blue-900 dark:hover:text-blue-200 transition-colors opacity-80 hover:opacity-100" href="#">Guidelines</a>
+<a class="text-slate-400 dark:text-slate-600 text-xs font-normal Inter uppercase tracking-widest hover:text-blue-900 dark:hover:text-blue-200 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+<p class="text-slate-400 dark:text-slate-600 text-xs font-normal Inter uppercase tracking-widest opacity-80">© 2024 Scholaris Core. All Rights Reserved. Academic Excellence through Digital Governance.</p>
+</footer>
+</div>
+<!-- Contextual FAB (Only on relevant screens) -->
+<button class="fixed bottom-6 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 z-50">
+<span class="material-symbols-outlined text-2xl" data-icon="help">help</span>
+</button>
+</body></html>

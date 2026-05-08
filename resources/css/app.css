@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Scholaris Core: Tonal Architecture Colors */
+    --color-surface-container-lowest: #ffffff;
+    --color-secondary-fixed-dim: #d6d3d8;
+    --color-on-tertiary-fixed-variant: #5f5773;
+    --color-on-surface: #1a1c1e;
+    --color-on-primary-fixed: #001945;
+    --color-tertiary-dim: #564f6a;
+    --color-primary-dim: #1e3a8a;
+    --color-secondary: #5f5f62;
+    --color-surface-tint: #1e3a8a;
+    --color-on-tertiary-container: #1d192b;
+    --color-error: #ba1a1a;
+    --color-primary-container: #dbe1ff;
+    --color-surface-container: #f0f3f8;
+    --color-on-primary-fixed-variant: #004494;
+    --color-outline-variant: #c4c6d0;
+    --color-on-primary-container: #001945;
+    --color-primary-fixed-dim: #b1c5ff;
+    --color-secondary-container: #e1e2ec;
+    --color-primary: #1e3a8a;
+    --color-error-container: #ffdad6;
+    --color-on-primary: #ffffff;
+    --color-on-secondary-fixed-variant: #44474e;
+    --color-surface-container-high: #e2e2e6;
+    --color-inverse-on-surface: #f1f0f4;
+    --color-outline: #74777f;
+    --color-on-secondary-fixed: #1a1c1e;
+    --color-secondary-dim: #c5c6d0;
+    --color-secondary-fixed: #e1e2ec;
+    --color-error-dim: #ffb4ab;
+    --color-background: #fdfbff;
+    --color-on-error-container: #410002;
+    --color-on-secondary: #ffffff;
+    --color-surface: #fdfbff;
+    --color-inverse-primary: #b1c5ff;
+    --color-on-tertiary-fixed: #1d192b;
+    --color-surface-container-highest: #e2e2e6;
+    --color-on-tertiary: #ffffff;
+    --color-surface-dim: #ded9e0;
+    --color-tertiary: #605b71;
+    --color-surface-bright: #fdfbff;
+    --color-tertiary-fixed-dim: #cbc1e9;
+    --color-on-error: #ffffff;
+    --color-primary-fixed: #dbe1ff;
+    --color-surface-variant: #e1e2ec;
+    --color-inverse-surface: #2f3033;
+    --color-on-background: #1a1c1e;
+    --color-on-surface-variant: #44474e;
+    --color-tertiary-fixed: #e7deff;
+    --color-on-secondary-container: #1a1c1e;
+    --color-tertiary-container: #e7deff;
+    --color-surface-container-low: #f4f3f7;
+
+    /* Status Colors */
+    --color-success: #15803d;
+    --color-warning: #b45309;
+    
+    /* Premium Accents */
+    --color-accent-blue: #3b82f6;
+    --color-accent-indigo: #6366f1;
+    --color-accent-emerald: #10b981;
+
+    /* Typography */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-headline: 'Inter', sans-serif;
+
+    /* Shadows */
+    --shadow-premium: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    --shadow-premium-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+@layer base {
+    body {
+        @apply bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@utility glass-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility premium-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-outline-variant), transparent 70%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@utility btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    border-radius: 0.75rem;
+    font-weight: 700;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--color-primary), black 10%);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+@utility auth-gradient {
+    background: radial-gradient(circle at top right, #1e3a8a 0%, #000000 100%);
+}
+

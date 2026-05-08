@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Scholaris Core</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#d6d3d8",
+                      "on-tertiary-fixed-variant": "#5f5773",
+                      "on-surface": "#2b3437",
+                      "on-primary-fixed": "#1d3989",
+                      "tertiary-dim": "#564f6a",
+                      "primary-dim": "#334d9d",
+                      "secondary": "#5f5f62",
+                      "surface-tint": "#4059aa",
+                      "on-tertiary-container": "#554e69",
+                      "error": "#9e3f4e",
+                      "primary-container": "#dce1ff",
+                      "surface-container": "#eaeff1",
+                      "on-primary-fixed-variant": "#3d57a7",
+                      "outline-variant": "#abb3b7",
+                      "on-primary-container": "#334c9d",
+                      "primary-fixed-dim": "#c9d3ff",
+                      "secondary-container": "#e4e1e6",
+                      "primary": "#4059aa",
+                      "error-container": "#ff8b9a",
+                      "on-primary": "#f8f7ff",
+                      "on-secondary-fixed-variant": "#5b5b5f",
+                      "surface-container-high": "#e3e9ec",
+                      "inverse-on-surface": "#9b9d9e",
+                      "outline": "#737c7f",
+                      "on-secondary-fixed": "#3f3f43",
+                      "secondary-dim": "#535356",
+                      "secondary-fixed": "#e4e1e6",
+                      "error-dim": "#4f0116",
+                      "background": "#f8f9fa",
+                      "on-error-container": "#782232",
+                      "on-secondary": "#fbf8fc",
+                      "surface": "#f8f9fa",
+                      "inverse-primary": "#8fa7fe",
+                      "on-tertiary-fixed": "#423b56",
+                      "surface-container-highest": "#dbe4e7",
+                      "on-tertiary": "#fdf7ff",
+                      "surface-dim": "#d1dce0",
+                      "tertiary": "#625b77",
+                      "surface-bright": "#f8f9fa",
+                      "tertiary-fixed-dim": "#dacff0",
+                      "on-error": "#fff7f7",
+                      "primary-fixed": "#dce1ff",
+                      "surface-variant": "#dbe4e7",
+                      "inverse-surface": "#0c0f10",
+                      "on-background": "#2b3437",
+                      "on-surface-variant": "#586064",
+                      "tertiary-fixed": "#e8ddff",
+                      "on-secondary-container": "#525155",
+                      "tertiary-container": "#e8ddff",
+                      "surface-container-low": "#f1f4f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container">
+<main class="min-h-screen flex flex-col md:flex-row">
+<!-- Left Section: Visual Anchor -->
+<section class="relative hidden md:flex md:w-1/2 lg:w-3/5 bg-primary-container items-center justify-center overflow-hidden">
+<!-- Background Texture/Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-dim/30 z-10"></div>
+<img alt="Academic environment" class="absolute inset-0 object-cover w-full h-full opacity-40 mix-blend-overlay" data-alt="Modern academic building with glass architecture and students walking in a sunlit courtyard, high-end editorial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDulG8K7KxvWF_WfEjTCDDNcRlcVTvS78vwwsEP4s9gpMdDcKt46kjIgW36146rZM1wyzGNBi_KIxY1I9Ei5rJeY2ffgOD3nsEYk23vGMKP60vf1thdcisdr4Kh7nhIBha3U7UxnYdCTAggaG9G6rThZPuwtQV6z4p_R99fB8vRdFbqMXAvq19tCFfUFokLd1AORALtTqJquTRCii9UiOJ2jen2htEHNDioq-HZWMweznqNrsWK3t1_OwcGoDlKkRbj0wATNZUUzSY"/>
+<!-- Branding Core -->
+<div class="relative z-20 p-12 text-center flex flex-col items-center">
+<div class="mb-8 w-24 h-24 bg-surface-container-lowest rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="school">school</span>
+</div>
+<h1 class="text-4xl lg:text-5xl font-black text-on-primary-container tracking-tighter mb-4">Scholaris Core</h1>
+<p class="text-lg lg:text-xl text-on-primary-fixed-variant font-medium max-w-md mx-auto leading-relaxed">
+                    Precision accounting thesis management. Where academic rigor meets digital governance.
+                </p>
+<!-- Floating Glass Card (Organic Structuralism) -->
+<div class="mt-12 p-6 bg-surface-container-lowest/40 backdrop-blur-xl rounded-xl border border-white/20 shadow-xl max-w-sm">
+<p class="text-sm font-medium text-on-surface italic">"Excellence in research begins with organized stewardship."</p>
+<div class="mt-4 flex items-center justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary/40"></div>
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Section: Login Form -->
+<section class="flex-1 flex flex-col justify-center items-center p-6 md:p-12 lg:p-24 bg-surface-container-lowest">
+<div class="w-full max-w-md">
+<!-- Mobile Header -->
+<div class="md:hidden flex items-center gap-3 mb-12">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+<span class="text-xl font-bold tracking-tight text-on-surface">Scholaris Core</span>
+</div>
+<div class="mb-10">
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Welcome Back</h2>
+<p class="text-on-surface-variant font-medium">Please enter your academic credentials to proceed.</p>
+</div>
+<form class="space-y-6">
+<!-- Username Field -->
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1" for="username">Username</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="person">person</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-4 bg-surface-container-low border-0 rounded-xl text-on-surface focus:ring-0 focus:bg-surface-container-high transition-colors placeholder:text-outline-variant" id="username" name="username" placeholder="Enter your ID or email" type="text"/>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-300 peer-focus:w-full"></div>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider ml-1" for="password">Password</label>
+<a class="text-xs font-bold text-primary hover:text-primary-dim transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-11 pr-12 py-4 bg-surface-container-low border-0 rounded-xl text-on-surface focus:ring-0 focus:bg-surface-container-high transition-colors placeholder:text-outline-variant" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-dim text-on-primary py-4 px-6 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:translate-y-[-1px] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+<span>Login</span>
+<span class="material-symbols-outlined text-xl" data-icon="login">login</span>
+</button>
+</div>
+</form>
+<!-- Alternative Methods -->
+<div class="mt-8 pt-8 border-t border-surface-container-high text-center">
+<p class="text-on-surface-variant text-sm mb-4">Or continue with institutional SSO</p>
+<button class="w-full flex items-center justify-center gap-3 py-3 px-6 bg-surface-container-lowest border border-outline-variant/30 rounded-xl text-on-surface-variant font-semibold hover:bg-surface-container transition-colors">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Small colored Google G logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkKMk40OizYFlJJM4kAr1z9YymaAxZUhDaKig8xDWoZ5y8og1DHoYlZaheVO-xnWR8nBVwswDltxBm__1nUwArz2Kcc03djgLrnxxrLaaZXpL-7XXx3elzPy3OMyaqbf8WIsjYi1tuB-sjpJTCq8wdcvL8hd0VHdD8Pb0YWve17mCcsO3Z06XLl4eU3G4et03mwVu5Y79OqpJGzR-wQ6IWYG7pF8kY0iS72jnx7mw09Oc_leKy85sgFsEOx7ljnqmEdqCcR-RDPrQ"/>
+<span>Sign in with Google Workspace</span>
+</button>
+</div>
+<!-- Footer Link -->
+<footer class="mt-12 text-center">
+<p class="text-on-surface-variant font-medium">
+                        Belum punya akun? 
+                        <a class="text-primary font-bold hover:underline decoration-2 underline-offset-4 ml-1" href="#">
+                            Daftar sebagai Mahasiswa di sini.
+                        </a>
+</p>
+</footer>
+</div>
+</section>
+</main>
+<!-- Global Footer Snippet (Conditional Suppression Logic applied - simplified for login) -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center md:hidden lg:flex px-6 pointer-events-none">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md px-6 py-2 rounded-full border border-outline-variant/10 shadow-sm pointer-events-auto">
+<p class="text-[10px] font-normal Inter uppercase tracking-[0.2em] text-slate-400">
+                © 2024 Scholaris Core. Academic Excellence.
+            </p>
+</div>
+</div>
+</body></html>

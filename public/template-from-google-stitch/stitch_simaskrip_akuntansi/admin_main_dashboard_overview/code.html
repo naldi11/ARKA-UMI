@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholaris Core - Admin Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c9d3ff",
+                    "on-tertiary-fixed": "#423b56",
+                    "surface-variant": "#dbe4e7",
+                    "secondary-fixed-dim": "#d6d3d8",
+                    "on-secondary-fixed-variant": "#5b5b5f",
+                    "on-error": "#fff7f7",
+                    "on-tertiary": "#fdf7ff",
+                    "tertiary-fixed": "#e8ddff",
+                    "surface-bright": "#f8f9fa",
+                    "inverse-surface": "#0c0f10",
+                    "inverse-primary": "#8fa7fe",
+                    "secondary": "#5f5f62",
+                    "secondary-dim": "#535356",
+                    "surface-container-low": "#f1f4f6",
+                    "primary": "#4059aa",
+                    "on-primary-fixed": "#1d3989",
+                    "on-surface": "#2b3437",
+                    "primary-container": "#dce1ff",
+                    "tertiary-dim": "#564f6a",
+                    "primary-dim": "#334d9d",
+                    "on-secondary-container": "#525155",
+                    "on-primary-fixed-variant": "#3d57a7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eaeff1",
+                    "surface-dim": "#d1dce0",
+                    "on-surface-variant": "#586064",
+                    "on-secondary-fixed": "#3f3f43",
+                    "on-secondary": "#fbf8fc",
+                    "error-container": "#ff8b9a",
+                    "error-dim": "#4f0116",
+                    "tertiary-fixed-dim": "#dacff0",
+                    "on-primary": "#f8f7ff",
+                    "secondary-fixed": "#e4e1e6",
+                    "tertiary": "#625b77",
+                    "outline": "#737c7f",
+                    "outline-variant": "#abb3b7",
+                    "error": "#9e3f4e",
+                    "primary-fixed": "#dce1ff",
+                    "tertiary-container": "#e8ddff",
+                    "on-tertiary-container": "#554e69",
+                    "on-primary-container": "#334c9d",
+                    "secondary-container": "#e4e1e6",
+                    "surface": "#f8f9fa",
+                    "on-background": "#2b3437",
+                    "on-error-container": "#782232",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#4059aa",
+                    "inverse-on-surface": "#9b9d9e",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-tertiary-fixed-variant": "#5f5773",
+                    "surface-container-high": "#e3e9ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 flex justify-between items-center h-16 px-8 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tighter text-blue-900 dark:text-blue-100">Scholaris Core</span>
+<div class="hidden md:flex ml-8 items-center bg-slate-100 dark:bg-slate-900 rounded-full px-4 py-1.5 gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder-on-surface-variant" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="Administrator profile photo" class="w-8 h-8 rounded-full object-cover ring-2 ring-blue-100 dark:ring-blue-900" data-alt="Professional close-up portrait of a corporate administrator in a dark suit with a clean office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_nWl8d_iLh6Eq9iCNmW5ONbh4utjXy0iUl-AvWIKylOw5Pv0mgnoC9yS9AjPjD8Ru8dr4GoO2VxVK5SnMoWigYkdtJTz_sEifMGFIob3IirDXwm9zM6Qv-lVhTv1AY-IDDw4TnX3-rVbjUKektfzkm5Opm_zc-QEZowRVmZuGg59zjt2X2AltpcuCdwgXfK5K3rlZHzvrClnBV__lJE6Gu-_nDchiEMyJUnI3OphhD5ce9le5cID1OkfBioHmq3tiHbHtZhFaHeI"/>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 pt-20 bg-slate-50 dark:bg-slate-950 flex flex-col transition-all duration-300 ease-in-out">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded-xl">
+<span class="material-symbols-outlined text-primary font-bold">menu_book</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-blue-900 dark:text-white leading-tight">The Curator</h2>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Academic Management</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-4 flex-grow">
+<!-- Active Tab: Overview -->
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-bold font-inter text-blue-700 dark:text-blue-300 border-r-2 border-blue-700 dark:border-blue-400 bg-blue-50/50 dark:bg-blue-900/20 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium font-inter text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-r-lg" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span>Account Registration</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium font-inter text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-r-lg" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Document Verification</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium font-inter text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-r-lg" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Lecturers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium font-inter text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-r-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium font-inter text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-r-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="p-4 mt-auto border-t border-slate-200/50">
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium font-inter text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined">archive</span>
+<span>Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 p-8 min-h-screen">
+<header class="mb-10">
+<div class="flex justify-between items-end">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface mb-1">Admin Overview</h1>
+<p class="text-on-surface-variant text-sm font-medium">Accounting Thesis Management System Analytics</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container-high text-on-surface text-sm font-semibold rounded-xl flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+                        Last 30 Days
+                    </button>
+<button class="px-5 py-2 bg-primary text-on-primary text-sm font-bold rounded-xl shadow-sm shadow-primary/20 hover:bg-primary-dim transition-all">
+                        Generate Report
+                    </button>
+</div>
+</div>
+</header>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Total Students -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-slate-100 rounded-xl group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary transition-colors">group</span>
+</div>
+<span class="text-xs font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded">GLOBAL</span>
+</div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-wider mb-1">Total Students</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-on-surface">1,284</span>
+<span class="text-xs font-semibold text-green-600 flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        12%
+                    </span>
+</div>
+</div>
+<!-- Pending Thesis -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-amber-50 rounded-xl group-hover:bg-amber-100 transition-colors">
+<span class="material-symbols-outlined text-amber-600">pending_actions</span>
+</div>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">ACTION REQ</span>
+</div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-wider mb-1">Pending Thesis</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-on-surface">42</span>
+<span class="text-xs font-semibold text-amber-500">In Review</span>
+</div>
+</div>
+<!-- Completed Thesis -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-emerald-50 rounded-xl group-hover:bg-emerald-100 transition-colors">
+<span class="material-symbols-outlined text-emerald-600">verified</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">ARCHIVED</span>
+</div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-wider mb-1">Completed Thesis</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-on-surface">318</span>
+<span class="text-xs font-semibold text-emerald-600">This Semester</span>
+</div>
+</div>
+<!-- Documents Waiting -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined text-blue-600">quick_reference_all</span>
+</div>
+<span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">NEW</span>
+</div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-wider mb-1">Waiting Verification</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-on-surface">15</span>
+<span class="text-xs font-semibold text-blue-400">Next Priority</span>
+</div>
+</div>
+</div>
+<!-- Secondary Layout: Chart & Activity -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Chart Section -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-lg font-bold text-on-surface">Research Progress</h2>
+<p class="text-on-surface-variant text-sm">Thesis milestones reached by department</p>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-low rounded-lg text-xs font-bold text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Auditing
+                        </div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-low rounded-lg text-xs font-bold text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span> Taxation
+                        </div>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="relative h-64 w-full flex items-end justify-between gap-4 px-2">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+<div class="border-t border-slate-100 w-full h-px"></div>
+</div>
+<!-- Chart Bars -->
+<div class="flex-1 flex flex-col items-center group relative">
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg transition-all duration-500 h-[60%] group-hover:brightness-110"></div>
+<span class="mt-4 text-[10px] font-bold text-on-surface-variant">JAN</span>
+</div>
+<div class="flex-1 flex flex-col items-center group relative">
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg transition-all duration-500 h-[45%] group-hover:brightness-110"></div>
+<span class="mt-4 text-[10px] font-bold text-on-surface-variant">FEB</span>
+</div>
+<div class="flex-1 flex flex-col items-center group relative">
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg transition-all duration-500 h-[80%] group-hover:brightness-110"></div>
+<span class="mt-4 text-[10px] font-bold text-on-surface-variant">MAR</span>
+</div>
+<div class="flex-1 flex flex-col items-center group relative">
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg transition-all duration-500 h-[35%] group-hover:brightness-110"></div>
+<span class="mt-4 text-[10px] font-bold text-on-surface-variant">APR</span>
+</div>
+<div class="flex-1 flex flex-col items-center group relative">
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg transition-all duration-500 h-[95%] group-hover:brightness-110"></div>
+<span class="mt-4 text-[10px] font-bold text-on-surface-variant">MAY</span>
+</div>
+<div class="flex-1 flex flex-col items-center group relative">
+<div class="w-full max-w-[40px] bg-primary rounded-t-lg transition-all duration-500 h-[70%] group-hover:brightness-110"></div>
+<span class="mt-4 text-[10px] font-bold text-on-surface-variant">JUN</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-lg font-bold text-on-surface">Recent Activity</h2>
+<button class="text-primary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-6 flex-grow">
+<!-- Activity Item 1 -->
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 text-xl">upload_file</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">New Thesis Uploaded</p>
+<p class="text-xs text-on-surface-variant mb-1">Sarah Jenkins submitted "Audit Ethics in Fintech"</p>
+<span class="text-[10px] font-medium text-slate-400">2 minutes ago</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-amber-600 text-xl">gavel</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Defense Scheduled</p>
+<p class="text-xs text-on-surface-variant mb-1">Panel A assigned to Dr. Marcus Aris</p>
+<span class="text-[10px] font-medium text-slate-400">45 minutes ago</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500 text-xl">person_add</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Lecturer Registration</p>
+<p class="text-xs text-on-surface-variant mb-1">Prof. Elena Vance joined the faculty portal</p>
+<span class="text-[10px] font-medium text-slate-400">3 hours ago</span>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-emerald-600 text-xl">check_circle</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Document Verified</p>
+<p class="text-xs text-on-surface-variant mb-1">Transcript ID #9902 approved for registration</p>
+<span class="text-[10px] font-medium text-slate-400">5 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Health / Footer Utility -->
+<div class="mt-8 flex justify-between items-center bg-surface-container-low px-6 py-4 rounded-xl">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-bold text-on-surface">System Live</span>
+</div>
+<div class="h-4 w-px bg-slate-300"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-400">database</span>
+<span class="text-xs font-medium text-on-surface-variant">DB Latency: 24ms</span>
+</div>
+</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+                Scholaris Core Engine v4.2.0-stable
+            </div>
+</div>
+</main>
+<!-- FAB Contextual Action -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholaris Core - Verifikasi Dokumen Skripsi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c9d3ff",
+                    "on-tertiary-fixed": "#423b56",
+                    "surface-variant": "#dbe4e7",
+                    "secondary-fixed-dim": "#d6d3d8",
+                    "on-secondary-fixed-variant": "#5b5b5f",
+                    "on-error": "#fff7f7",
+                    "on-tertiary": "#fdf7ff",
+                    "tertiary-fixed": "#e8ddff",
+                    "surface-bright": "#f8f9fa",
+                    "inverse-surface": "#0c0f10",
+                    "inverse-primary": "#8fa7fe",
+                    "secondary": "#5f5f62",
+                    "secondary-dim": "#535356",
+                    "surface-container-low": "#f1f4f6",
+                    "primary": "#4059aa",
+                    "on-primary-fixed": "#1d3989",
+                    "on-surface": "#2b3437",
+                    "primary-container": "#dce1ff",
+                    "tertiary-dim": "#564f6a",
+                    "primary-dim": "#334d9d",
+                    "on-secondary-container": "#525155",
+                    "on-primary-fixed-variant": "#3d57a7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eaeff1",
+                    "surface-dim": "#d1dce0",
+                    "on-surface-variant": "#586064",
+                    "on-secondary-fixed": "#3f3f43",
+                    "on-secondary": "#fbf8fc",
+                    "error-container": "#ff8b9a",
+                    "error-dim": "#4f0116",
+                    "tertiary-fixed-dim": "#dacff0",
+                    "on-primary": "#f8f7ff",
+                    "secondary-fixed": "#e4e1e6",
+                    "tertiary": "#625b77",
+                    "outline": "#737c7f",
+                    "outline-variant": "#abb3b7",
+                    "error": "#9e3f4e",
+                    "primary-fixed": "#dce1ff",
+                    "tertiary-container": "#e8ddff",
+                    "on-tertiary-container": "#554e69",
+                    "on-primary-container": "#334c9d",
+                    "secondary-container": "#e4e1e6",
+                    "surface": "#f8f9fa",
+                    "on-background": "#2b3437",
+                    "on-error-container": "#782232",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#4059aa",
+                    "inverse-on-surface": "#9b9d9e",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-tertiary-fixed-variant": "#5f5773",
+                    "surface-container-high": "#e3e9ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dbe4e7; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl border-b border-slate-200/50 flex justify-between items-center h-16 px-8">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tighter text-blue-900">Scholaris Core</span>
+<div class="h-6 w-px bg-slate-200/50 mx-2"></div>
+<h1 class="text-on-surface font-semibold tracking-tight text-lg">Verifikasi Dokumen Skripsi</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-slate-100 border-none rounded-full py-1.5 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Cari mahasiswa..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="ml-2 w-8 h-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="Administrator profile photo" data-alt="Administrator profile photo with professional suit and neutral studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5vdUKP4Tzk_fFhQ7kh7-HNYKUuTW1TfgQG4PrzcCl02v2bpumKG-fxbSIsS9TRMi-F5h4nrOEtR5Mnc24di0FpzcY2IChGN0pyPdsYu1G8J1_SFf6OIC-BrbgKkLXhOHaEJrJmK3590Zrl7ANz-UJezG0YCh7kXYRcTl3LmxvZ1cgPuO8nlDQRkAk1hEX-aj4ehhLxGORzsYMbxGUVOD3HIquPTJYCWT1FfOxvw-_Y-Or5_SYfZ3yf0Z-7CHJdIbthSCIJjrsKio"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 pt-20 bg-slate-50 flex flex-col gap-1 px-4 z-40">
+<div class="mb-6 px-4 py-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<p class="text-lg font-black text-blue-900">The Curator</p>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Academic Management</p>
+</div>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="text-sm font-medium">Account Registration</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-blue-700 font-bold border-r-2 border-blue-700 bg-blue-50/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-sm font-medium">Document Verification</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-sm font-medium">Lecturers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="mt-auto pb-8">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-200/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">archive</span>
+<span class="text-sm font-medium">Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pl-64 pt-16 h-screen overflow-hidden flex flex-col">
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Document Preview -->
+<section class="flex-1 bg-surface-container-low p-8 flex flex-col gap-6 overflow-hidden">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold text-primary px-2 py-0.5 bg-primary-container rounded">TA-2024-001</span>
+<span class="text-xs text-on-surface-variant font-medium uppercase tracking-wider">Proposal Skripsi</span>
+</div>
+<h2 class="text-xl font-bold text-on-surface">Analisis Audit Forensik dalam Deteksi Fraud Sektor Publik</h2>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-primary rounded-xl font-semibold text-sm hover:bg-primary-container transition-colors border border-primary/10">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Download PDF
+                    </button>
+</div>
+<!-- Document Viewer Placeholder -->
+<div class="flex-1 bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 relative group">
+<div class="absolute inset-0 bg-slate-900/5 flex flex-col items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-slate-400">visibility</span>
+</div>
+<!-- Simulating a document view -->
+<div class="h-full w-full bg-[#E5E7EB] p-8 custom-scrollbar overflow-y-auto">
+<div class="max-w-2xl mx-auto bg-white shadow-lg min-h-[1100px] p-16 flex flex-col gap-8">
+<div class="w-24 h-24 bg-slate-100 self-center rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-300 text-5xl">image</span>
+</div>
+<div class="space-y-4">
+<div class="h-8 bg-slate-100 w-3/4 rounded mx-auto"></div>
+<div class="h-4 bg-slate-50 w-1/2 rounded mx-auto"></div>
+</div>
+<div class="h-[1px] bg-slate-100 w-full my-4"></div>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="h-3 bg-slate-50 w-full rounded"></div>
+<div class="h-3 bg-slate-50 w-full rounded"></div>
+<div class="h-3 bg-slate-50 w-5/6 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-3 bg-slate-50 w-full rounded"></div>
+<div class="h-3 bg-slate-50 w-full rounded"></div>
+<div class="h-3 bg-slate-50 w-4/6 rounded"></div>
+</div>
+<div class="pt-8 space-y-4">
+<div class="h-5 bg-slate-100 w-1/4 rounded"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-48 bg-slate-50 rounded"></div>
+<div class="h-48 bg-slate-50 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-sm text-on-surface-variant font-medium">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">history</span>
+                        Diunggah 2 jam yang lalu
+                    </div>
+<div class="w-1 h-1 rounded-full bg-slate-300"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">description</span>
+                        14 Halaman
+                    </div>
+<div class="w-1 h-1 rounded-full bg-slate-300"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                        Plagiarisme: 12% (Aman)
+                    </div>
+</div>
+</section>
+<!-- Right Panel: Verification Controls -->
+<section class="w-[400px] bg-surface-container-lowest border-l border-slate-200/50 p-8 flex flex-col gap-8 custom-scrollbar overflow-y-auto">
+<!-- Student Identity Card -->
+<div>
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Informasi Mahasiswa</h3>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<img alt="Student photo" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" data-alt="University student profile photo, young male, smiling, academic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbdGX7f4prpFjUUz2WkLAKsHgBB9Egrz7lgcvn-TrKKxYS2Jyf0ReRy4VKR1VsGY4tQLSiFF73B4PkIcOj_KxbIGCxTlpqlay8kR_nxdcv0pnIMEqule5FFs7weGMKZ0yEQDxjEoGqeKaHwhIsbe6kMdzqPzei4ef0qhJ1bnfT8rbQ3MB8SgNHsLyMmzXMuY34eBz3W3SupyKD8qcU8RWZ7a2AE6S3dol9Smu2udxwOCAzn-ZT9Do7YmS0eTI7f7JAb6oHvMD5sc"/>
+<div>
+<p class="font-bold text-on-surface">Aditya Pratama</p>
+<p class="text-sm text-on-surface-variant">NIM: 120210405</p>
+</div>
+</div>
+</div>
+<!-- Thesis Metadata -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Detail Verifikasi</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Bidang Minat</span>
+<span class="font-semibold text-on-surface">Akuntansi Publik</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Dosen Pembimbing</span>
+<span class="font-semibold text-on-surface">Dr. Hendra Wijaya</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Semester</span>
+<span class="font-semibold text-on-surface">Genap 2023/2024</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-slate-100"></div>
+<!-- Verification Feedback -->
+<div class="flex-1 flex flex-col gap-4">
+<label class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Catatan Peninjauan</label>
+<textarea class="w-full flex-1 min-h-[200px] bg-surface-container-high border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400 resize-none" placeholder="Berikan masukan atau alasan penolakan di sini..."></textarea>
+<div class="flex items-start gap-3 p-3 bg-blue-50/50 rounded-lg">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">info</span>
+<p class="text-[11px] leading-relaxed text-blue-800">Catatan ini akan dikirimkan langsung ke dashboard mahasiswa dan email notifikasi mereka.</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="space-y-3 pt-4">
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-3 bg-on-error-container text-on-error rounded-xl font-bold text-sm hover:brightness-110 transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-lg">close</span>
+                            Tolak
+                        </button>
+<button class="flex items-center justify-center gap-2 py-3 bg-primary text-on-primary rounded-xl font-bold text-sm hover:brightness-110 transition-all active:scale-95 shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">check</span>
+                            Setujui
+                        </button>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-surface-variant rounded-xl font-bold text-sm hover:bg-slate-200/50 transition-all">
+                        Lewati &amp; Berikutnya
+                    </button>
+</div>
+</section>
+</div>
+</main>
+</body></html>

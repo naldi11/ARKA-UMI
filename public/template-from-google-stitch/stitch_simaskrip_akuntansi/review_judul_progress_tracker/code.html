@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Judul &amp; Progress Tracker - The Academic Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .tonal-elevation {
+            box-shadow: 0 32px 64px -12px rgba(43, 52, 55, 0.04);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#525155",
+                        "on-tertiary-fixed-variant": "#5f5773",
+                        "surface-tint": "#4059aa",
+                        "outline": "#737c7f",
+                        "on-background": "#2b3437",
+                        "surface-dim": "#d1dce0",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary-fixed": "#3f3f43",
+                        "on-tertiary-container": "#554e69",
+                        "background": "#f8f9fa",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-primary-container": "#334c9d",
+                        "on-error": "#fff7f7",
+                        "inverse-surface": "#0c0f10",
+                        "on-primary-fixed-variant": "#3d57a7",
+                        "inverse-primary": "#8fa7fe",
+                        "secondary-fixed-dim": "#d6d3d8",
+                        "surface-bright": "#f8f9fa",
+                        "on-surface": "#2b3437",
+                        "error-dim": "#4f0116",
+                        "tertiary": "#625b77",
+                        "on-surface-variant": "#586064",
+                        "on-primary": "#f8f7ff",
+                        "surface-container-high": "#e3e9ec",
+                        "on-tertiary-fixed": "#423b56",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-secondary": "#fbf8fc",
+                        "on-tertiary": "#fdf7ff",
+                        "primary": "#4059aa",
+                        "tertiary-fixed-dim": "#dacff0",
+                        "secondary-fixed": "#e4e1e6",
+                        "surface-variant": "#dbe4e7",
+                        "secondary": "#5f5f62",
+                        "secondary-container": "#e4e1e6",
+                        "on-error-container": "#782232",
+                        "error": "#9e3f4e",
+                        "tertiary-container": "#e8ddff",
+                        "on-primary-fixed": "#1d3989",
+                        "error-container": "#ff8b9a",
+                        "primary-container": "#dce1ff",
+                        "tertiary-fixed": "#e8ddff",
+                        "tertiary-dim": "#564f6a",
+                        "secondary-dim": "#535356",
+                        "surface-container-low": "#f1f4f6",
+                        "primary-fixed-dim": "#c9d3ff",
+                        "on-secondary-fixed-variant": "#5b5b5f",
+                        "surface-container": "#eaeff1",
+                        "surface": "#f8f9fa",
+                        "primary-dim": "#334d9d",
+                        "outline-variant": "#abb3b7",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 flex flex-col p-4 border-r border-slate-200/50 z-50">
+<div class="mb-8 px-2">
+<h1 class="text-lg font-black text-blue-900 tracking-tighter">The Academic Curator</h1>
+</div>
+<div class="flex items-center gap-3 px-2 mb-8">
+<img alt="Dosen Profile Picture" class="w-10 h-10 rounded-full object-cover" data-alt="professional portrait of a middle-aged male academic in a library setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcKyAfiXj15mAjRLNE4F85Dw4QjbIh3uXuU4TY68iKic9CiVXj-d6tujzopJjIvQX4HbaBPLvr6KN3P_M8Vik0ZNyHOoPi5ZdTCbw6FC6gVmb1d3wwjARkLjQyeQ3zbXW-Z8NBocyaEr8XzwEvTOxBshJ9hWQmBlON_JlD9VdpEH3g7C_DX6lcRRbXj9_Jk6bsQ5Xme0MEjO5lwaOPjKfIChxGEA1fltHA5ipfA-yC8w6vKuYHCvM9QkXsIa4VvZmxVFpD5km0-Go"/>
+<div>
+<p class="font-bold text-sm text-blue-900">Dr. Academicus</p>
+<p class="text-xs text-slate-500">Senior Supervisor</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-100 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-white text-blue-700 font-bold rounded-lg shadow-sm group" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="font-medium text-sm">Supervision</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-100 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">description</span>
+<span class="font-medium text-sm">Documents</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-100 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200/50 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-100 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">help</span>
+<span class="font-medium text-sm">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-error-dim hover:bg-error-container/10 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">logout</span>
+<span class="font-medium text-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 glass-panel z-40">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-blue-800 font-semibold tracking-tight">Supervision</span>
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+<span class="text-slate-500 font-medium">Review Detail</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-500 hover:text-blue-600 cursor-pointer transition-colors">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</div>
+<span class="material-symbols-outlined text-slate-500 hover:text-blue-600 cursor-pointer transition-colors">account_circle</span>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Context Banner: Role Indicator -->
+<section class="bg-primary-container/30 rounded-xl p-6 flex items-start gap-4 border-l-4 border-primary">
+<div class="bg-primary text-on-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">assignment_ind</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-on-primary-container tracking-tight">Role: Pembimbing Utama (Dospem 1)</span>
+<span class="px-2 py-0.5 bg-primary text-on-primary text-[10px] font-bold rounded uppercase tracking-wider">Action Required</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Anda memiliki otoritas penuh untuk meninjau judul ini. Dospem 2 sedang menunggu verifikasi awal dari pihak Anda sebelum proses dapat berlanjut ke tahap validasi departemen.
+                    </p>
+</div>
+</section>
+<!-- Thesis Detail Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main Details Card -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl p-8 tonal-elevation">
+<div class="flex justify-between items-start mb-6">
+<span class="label-md px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-semibold uppercase tracking-widest">Research Proposal</span>
+<span class="text-on-surface-variant text-sm flex items-center gap-1 italic">
+<span class="material-symbols-outlined text-sm">schedule</span> Submitted 2 days ago
+                            </span>
+</div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tighter mb-4 leading-tight">
+                            Analisis Pengaruh Implementasi Cloud Accounting terhadap Kualitas Laporan Keuangan pada UMKM Sektor Retail di Jawa Timur
+                        </h2>
+<div class="grid grid-cols-2 gap-8 py-6 border-y border-surface-container-low my-6">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Target Journal</p>
+<p class="text-primary font-semibold text-lg italic">Jurnal Akuntansi dan Keuangan (JAK)</p>
+<p class="text-sm text-on-surface-variant italic">Sinta 2 Accredited</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Student</p>
+<p class="text-on-surface font-semibold text-lg">Budi Setiawan Arisanto</p>
+<p class="text-sm text-on-surface-variant">NIM: 20210410024</p>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Abstract / Research Gap</p>
+<p class="text-on-surface-variant leading-relaxed text-sm">
+                                Penelitian ini bertujuan untuk mengeksplorasi bagaimana transisi dari pencatatan manual/tradisional ke sistem berbasis cloud mempengaruhi integritas data dan kecepatan penyajian laporan keuangan bagi pelaku UMKM. Fokus utama adalah pada variabel kemudahan penggunaan (ease of use) dan keamanan data dalam konteks auditabilitas laporan keuangan.
+                            </p>
+</div>
+</div>
+<!-- Progress Stepper (The Spine) -->
+<div class="bg-surface-container-low rounded-xl p-8">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-bold text-on-surface tracking-tight">Thesis Journey Milestone</h3>
+<span class="text-xs font-bold text-primary">Stage 1 of 5</span>
+</div>
+<div class="relative flex items-center justify-between px-4">
+<!-- Progress Line -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container-highest -translate-y-1/2 rounded-full overflow-hidden">
+<div class="w-1/5 h-full bg-primary shadow-[0_0_12px_rgba(64,89,170,0.5)]"></div>
+</div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg ring-4 ring-primary-container">
+<span class="material-symbols-outlined text-lg">description</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-primary">Title Submission</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant opacity-50">Proposal</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">biotech</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant opacity-50">Data Analysis</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">school</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant opacity-50">Defense</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Actions & Metadata -->
+<div class="space-y-6">
+<!-- Action Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-6 tonal-elevation border-t-4 border-primary">
+<h4 class="font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">gavel</span>
+                            Final Decision
+                        </h4>
+<div class="space-y-3">
+<button class="w-full py-4 bg-[#28A745] text-white rounded-lg font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined">check_circle</span>
+                                Approve Judul
+                            </button>
+<button class="w-full py-4 bg-[#DC3545] text-white rounded-lg font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined">cancel</span>
+                                Reject Submission
+                            </button>
+</div>
+<p class="mt-4 text-[11px] text-center text-on-surface-variant">
+                            Clicking either action will prompt a feedback modal for the student.
+                        </p>
+</div>
+<!-- Supervision Stakeholders -->
+<div class="bg-surface-container-low rounded-xl p-6">
+<h4 class="font-bold text-on-surface mb-4 text-sm tracking-tight">Supervision Team</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold text-xs">D1</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Dr. Academicus (You)</p>
+<p class="text-[10px] text-primary font-semibold">Active Reviewer</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold text-xs">D2</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Prof. Dr. Financea, M.Ak</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Waiting for Dospem 1</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Resource Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container-low">
+<img alt="Research Resources" class="w-full h-24 object-cover" data-alt="overhead view of a clean workspace with an open notebook, sleek pen, and morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2oXnu8TyCib5ruECPfMGohLAoCUOV9L506TU-WfvP8esQF8f9dOfvNoRamB0ae2rPJ0R7JFatczG11RFFDkD5DRLFeDvaxSWXJIo7nqqQGI2dMpD6uer0MypFfoBWGo9g1xW5XGiM3seWuaFEXrWaTC6rukyg0BRaBUS2ul1pCkJ_KUAQAWc4NZ_mHilVyrGd3DW6_oyYDsgxxPUZbKIKT5Mt8mGttZ-Y25pgwRMMc9bK938RXO9J7tj-UkJo7cDwDP5vDvYIM3I"/>
+<div class="p-4">
+<h5 class="font-bold text-xs mb-1">Supporting Files</h5>
+<p class="text-[10px] text-on-surface-variant mb-3 italic">Preliminary study report.pdf</p>
+<button class="text-primary text-[10px] font-bold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-xs">download</span> Download PDF
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Backdrop (Hidden by default, shown for demo purpose as simplified UI) -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[100] flex items-center justify-center p-6 hidden">
+<div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+<div class="p-6 border-b border-surface-container-low flex justify-between items-center">
+<h3 class="text-xl font-extrabold text-on-surface tracking-tight">Review Feedback</h3>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex items-center gap-3 p-3 bg-error-container/20 rounded-lg text-on-error-container">
+<span class="material-symbols-outlined">info</span>
+<p class="text-xs font-medium">You are providing feedback for a <strong>Rejection</strong>. Please be specific.</p>
+</div>
+<label class="block">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block mb-2">Reviewer Notes</span>
+<textarea class="w-full h-40 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary p-4 text-sm placeholder:text-outline-variant" placeholder="Tuliskan catatan perbaikan atau alasan penolakan di sini..."></textarea>
+</label>
+</div>
+<div class="p-6 bg-surface-container-low flex justify-end gap-3">
+<button class="px-6 py-2.5 text-sm font-bold text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors">Cancel</button>
+<button class="px-8 py-2.5 text-sm font-bold bg-primary text-white rounded-lg shadow-md hover:bg-primary-dim transition-all">Submit Feedback</button>
+</div>
+</div>
+</div>
+</body></html>

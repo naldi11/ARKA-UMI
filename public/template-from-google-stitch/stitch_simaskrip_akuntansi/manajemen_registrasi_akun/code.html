@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen Registrasi Akun - Scholaris Core</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c9d3ff",
+                        "on-tertiary-fixed": "#423b56",
+                        "surface-variant": "#dbe4e7",
+                        "secondary-fixed-dim": "#d6d3d8",
+                        "on-secondary-fixed-variant": "#5b5b5f",
+                        "on-error": "#fff7f7",
+                        "on-tertiary": "#fdf7ff",
+                        "tertiary-fixed": "#e8ddff",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-surface": "#0c0f10",
+                        "inverse-primary": "#8fa7fe",
+                        "secondary": "#5f5f62",
+                        "secondary-dim": "#535356",
+                        "surface-container-low": "#f1f4f6",
+                        "primary": "#4059aa",
+                        "on-primary-fixed": "#1d3989",
+                        "on-surface": "#2b3437",
+                        "primary-container": "#dce1ff",
+                        "tertiary-dim": "#564f6a",
+                        "primary-dim": "#334d9d",
+                        "on-secondary-container": "#525155",
+                        "on-primary-fixed-variant": "#3d57a7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eaeff1",
+                        "surface-dim": "#d1dce0",
+                        "on-surface-variant": "#586064",
+                        "on-secondary-fixed": "#3f3f43",
+                        "on-secondary": "#fbf8fc",
+                        "error-container": "#ff8b9a",
+                        "error-dim": "#4f0116",
+                        "tertiary-fixed-dim": "#dacff0",
+                        "on-primary": "#f8f7ff",
+                        "secondary-fixed": "#e4e1e6",
+                        "tertiary": "#625b77",
+                        "outline": "#737c7f",
+                        "outline-variant": "#abb3b7",
+                        "error": "#9e3f4e",
+                        "primary-fixed": "#dce1ff",
+                        "tertiary-container": "#e8ddff",
+                        "on-tertiary-container": "#554e69",
+                        "on-primary-container": "#334c9d",
+                        "secondary-container": "#e4e1e6",
+                        "surface": "#f8f9fa",
+                        "on-background": "#2b3437",
+                        "on-error-container": "#782232",
+                        "background": "#f8f9fa",
+                        "surface-tint": "#4059aa",
+                        "inverse-on-surface": "#9b9d9e",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-tertiary-fixed-variant": "#5f5773",
+                        "surface-container-high": "#e3e9ec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for data-density */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dbe4e7; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 flex justify-between items-center h-16 px-8 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-900 dark:text-blue-100 font-inter tracking-tight">Scholaris Core</span>
+<div class="hidden md:flex relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-primary/20 w-64 transition-all duration-200" placeholder="Search records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">help</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden ml-2 border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Professional administrator profile portrait in a minimalist office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWqzabsCRV8wfZFE-oCjd54NwbdVCx4zyU5Pea_67vplM53QxDXMntUtOusttbnwf9Ciei3O2h5O-VDqGXRQMV2R5txNPbalBxbqh9WyvN-DimJhNKClS2klr6OXOLks7loCcUH-6mwsD8iVMtUGsqdPE475oK6561tMm6xUYvlVV0jtacIOEbtN8P6JEqw8G88HaYiz4ctZqHwwrrJNINj9SwYRrBnqyifpF3A6CqrRqErAXpv3DzRLrVoY_bnfDgUJ8NIutcUlI"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 pt-20 bg-slate-50 dark:bg-slate-950 flex flex-col gap-1 px-4 z-40">
+<div class="px-4 py-6 mb-4">
+<h2 class="text-lg font-black text-blue-900 dark:text-white uppercase tracking-widest">The Curator</h2>
+<p class="text-xs text-on-surface-variant font-medium">Academic Management</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-xl text-sm font-medium font-inter" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-700 dark:text-blue-300 font-bold border-r-2 border-blue-700 dark:border-blue-400 bg-blue-50/50 dark:bg-blue-900/20 transition-all duration-300 ease-in-out rounded-xl text-sm font-inter" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span>Account Registration</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-xl text-sm font-medium font-inter" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Document Verification</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-xl text-sm font-medium font-inter" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Lecturers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-xl text-sm font-medium font-inter" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-xl text-sm font-medium font-inter" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pb-8 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 ease-in-out rounded-xl text-sm font-medium font-inter" href="#">
+<span class="material-symbols-outlined">archive</span>
+<span>Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pl-64 pt-16 min-h-screen flex flex-col">
+<div class="flex-1 p-8">
+<!-- Page Header -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<nav class="flex items-center gap-2 text-xs font-medium text-on-surface-variant mb-3 uppercase tracking-tighter">
+<span>Management</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary">Registrasi Akun</span>
+</nav>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2 font-headline">Manajemen Registrasi Akun</h1>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">Kelola antrean pendaftaran mahasiswa baru. Tinjau dokumen kelengkapan sebelum memberikan akses sistem Scholaris Core.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-high text-on-surface-variant rounded-xl font-semibold text-sm transition-all hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-xl font-semibold text-sm shadow-lg shadow-primary/20 hover:bg-primary-dim transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Export List
+                    </button>
+</div>
+</header>
+<!-- Table Section -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Student Name</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">NIM</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Registration Date</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors border-b border-transparent">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">AA</div>
+<div>
+<p class="font-semibold text-on-surface text-sm">Aditya Arisandy</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Akuntansi Keuangan</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">aditya.ari@univ.ac.id</td>
+<td class="px-6 py-5 text-sm font-mono text-on-surface">12030119140023</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">12 Okt 2023, 10:45</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-amber-100/60 text-amber-800 text-[10px] font-black rounded-full backdrop-blur-sm">PENDING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed hover:bg-primary transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group bg-surface-container-low/30 hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-xs">BP</div>
+<div>
+<p class="font-semibold text-on-surface text-sm">Bagas Pratama</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Audit Sektor Publik</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">bagas.p@univ.ac.id</td>
+<td class="px-6 py-5 text-sm font-mono text-on-surface">12030119140156</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">11 Okt 2023, 14:22</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-amber-100/60 text-amber-800 text-[10px] font-black rounded-full backdrop-blur-sm">PENDING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed hover:bg-primary transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">CN</div>
+<div>
+<p class="font-semibold text-on-surface text-sm">Citra Nuraini</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Manajemen Perpajakan</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">citra.n@univ.ac.id</td>
+<td class="px-6 py-5 text-sm font-mono text-on-surface">12030119140089</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">11 Okt 2023, 09:15</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-amber-100/60 text-amber-800 text-[10px] font-black rounded-full backdrop-blur-sm">PENDING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed hover:bg-primary transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group bg-surface-container-low/30 hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed-dim text-on-primary-fixed-variant flex items-center justify-center font-bold text-xs">DW</div>
+<div>
+<p class="font-semibold text-on-surface text-sm">Dimas Wahyudi</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Sistem Informasi Akuntansi</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">dimas.w@univ.ac.id</td>
+<td class="px-6 py-5 text-sm font-mono text-on-surface">12030119140321</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">10 Okt 2023, 16:50</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-amber-100/60 text-amber-800 text-[10px] font-black rounded-full backdrop-blur-sm">PENDING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed hover:bg-primary transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed-variant flex items-center justify-center font-bold text-xs">EL</div>
+<div>
+<p class="font-semibold text-on-surface text-sm">Eka Lestari</p>
+<p class="text-[11px] text-on-surface-variant font-medium">Akuntansi Keuangan</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">eka.lestari@univ.ac.id</td>
+<td class="px-6 py-5 text-sm font-mono text-on-surface">12030119140045</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">10 Okt 2023, 11:30</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-amber-100/60 text-amber-800 text-[10px] font-black rounded-full backdrop-blur-sm">PENDING</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed hover:bg-primary transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+<p class="text-xs text-on-surface-variant font-medium">Showing <span class="text-on-surface">1-5</span> of <span class="text-on-surface">42</span> registrations</p>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-3 h-8 flex items-center justify-center rounded-lg bg-primary text-on-primary text-xs font-bold shadow-md shadow-primary/10">1</button>
+<button class="px-3 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high text-xs font-medium transition-colors">2</button>
+<button class="px-3 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high text-xs font-medium transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="px-3 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high text-xs font-medium transition-colors">9</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dashboard Insight Bento (Extra) -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-transparent hover:border-outline-variant/20 transition-all flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Active Queue</p>
+<p class="text-2xl font-black text-on-surface">42 <span class="text-xs font-normal text-amber-600">Requests</span></p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-transparent hover:border-outline-variant/20 transition-all flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Total Approved</p>
+<p class="text-2xl font-black text-on-surface">1,284 <span class="text-xs font-normal text-primary">This Year</span></p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl border border-transparent hover:border-outline-variant/20 transition-all flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Rejection Rate</p>
+<p class="text-2xl font-black text-on-surface">2.4% <span class="text-xs font-normal text-error">Low Impact</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Branding -->
+<footer class="p-8 mt-auto border-t border-surface-container-high bg-surface-container-low/30">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-900 flex items-center justify-center text-white font-bold italic">S</div>
+<p class="text-sm font-semibold text-on-surface">Scholaris Core <span class="font-normal text-on-surface-variant ml-2">v2.4.0-Stable</span></p>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">System Status</a>
+<a class="text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">Admin Manual</a>
+</div>
+<p class="text-[11px] text-on-surface-variant/60 uppercase font-black tracking-widest">© 2023 Digital Curator Systems</p>
+</div>
+</footer>
+</main>
+</body></html>
